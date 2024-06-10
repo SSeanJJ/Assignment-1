@@ -26,7 +26,21 @@ bool checkParans(const string& s)
 }
 
 
-int main() 
-{
+int main() {
+    std::string testCases[] = {
+        ")(",       // Not balanced
+        "((())",    // Not balanced
+        "()",       // Balanced
+        "(a)( (b)((c)(d )))" // Balanced
+    };
     
+    for (const std::string& testCase : testCases) {
+        if (checkParans(testCase)) {
+            std::cout << "\"" << testCase << "\" is balanced.\n";
+        } else {
+            std::cout << "\"" << testCase << "\" is not balanced.\n";
+        }
+    }
+
+    return 0;
 }
